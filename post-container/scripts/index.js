@@ -1,3 +1,29 @@
+/*
+
+> Jim Carroll |
+> 10/21/2020 |
+> [GitHub Profile](https://github.com/pulamusic)
+
+---
+*/
+
+removeElement = () => {
+  const iconDiv = document.getElementById("header-logo");
+  const breakScreen = 768px;
+  const screenWidth = 
+
+  if () {
+    iconDiv.remove()
+  } else if () {
+
+  } else {
+
+  }
+}
+
+
+
+/*
 const compileSass = require('compile-sass')
 // const { compileSassAndSave } = require('compile-sass')
 
@@ -14,3 +40,7 @@ app.use('/css/:cssName', compileSass.setup({
 }))
 
 // await compileSassAndSave('scss/styles.scss', 'css/styles.css')
+
+// ====== Something goes here ======
+
+*/

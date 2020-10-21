@@ -1,0 +1,44 @@
+/*
+> Jim Carroll |
+> 10/21/2020 |
+> [GitHub Profile](https://github.com/pulamusic)
+
+
+*/
+
+@use 'variables' as v;
+
+// Small devices
+@mixin sm {
+   @media (min-width: #{v.$screen-sm-min}) {
+       @content;
+   }
+}
+// Medium devices
+@mixin md {
+   @media (min-width: #{v.$screen-md-min}) {
+       @content;
+   }
+}
+// Large devices
+@mixin lg {
+   @media (min-width: #{v.$screen-lg-min}) {
+       @content;
+   }
+}
+// Extra large devices
+@mixin xl {
+   @media (min-width: #{v.$screen-xl-min}) {
+       @content;
+   }
+}
+
+/* ====== removing an element ====== */
+/* borrowed code from: https://stackoverflow.com/questions/17762354/remove-element-for-certain-screen-sizes/17762393 */
+/*
+@media only screen and (max-width: 767px) and (min-width: 480px)
+{
+    .icon-12{ display:none; } // 12 px
+    .icon-9{ display:inline-block; }  // 9px
+}
+*/

@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "comp": "sass --watch scss/styles.scss:css/styles.css"
+    "comp": "sass --watch scss/index.scss:css/styles.css"
   },
   "author": "Jim Carroll",
   "license": "MIT",
   "dependencies": {
     "compile-sass": "^1.1.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.27.0"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "webpack": "^5.1.3"
   }
 }

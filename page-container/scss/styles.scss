@@ -2,6 +2,9 @@
 > Jim Carroll |
 > 10/20/2020 |
 > [GitHub Profile](https://github.com/pulamusic)
+
+10/21/2020: commented out a bunch of SCSS that was freaking out the layout.
+
 */
 
 /* ====== Variables ====== */
@@ -42,6 +45,7 @@ $lt-bg-color: rgba(219, 212, 218, 0.1);
 
 /* ====== Mixins ====== */
 
+/*
 // Small devices
 @mixin sm {
    @media (min-width: #{$screen-sm-min}) {
@@ -72,6 +76,7 @@ $lt-bg-color: rgba(219, 212, 218, 0.1);
        @content;
    }
 }
+*/
 
 /* ====== Global styles modified by normalize.css ====== */
 
@@ -158,6 +163,7 @@ h6 {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 5px;
 
+  /*
   @include sm {
     padding: 0.2em;
     margin: 0.1em 0.3em;
@@ -173,7 +179,7 @@ h6 {
   @include xl {
     padding: 1em;
     margin: 0.8em 1em;
-  }
+  } */
 
   > div {
 		padding: 0.8em;
@@ -181,6 +187,7 @@ h6 {
 		border-radius: .3em;
 		box-shadow: 3px 4px 6px $md-bg-color;
 
+    /*
     @include sm {
       padding: 0.2em;
       margin: 0.1em 0.3em;
@@ -217,6 +224,7 @@ h6 {
         visibility: visible;
       }
     }
+    */
 	}
 }
 
@@ -355,9 +363,10 @@ h6 {
 
 /* ====== Technologies div ====== */
 
+/*
 .technologies-list {
   padding: 5px;
-  background-color: $lt-bg-color; /* rgba(219, 212, 218, 0.1) */
+  background-color: $lt-bg-color;
 }
 
 .unstyled {
@@ -420,9 +429,12 @@ ul.technologies li.nodejs a {
   }
 }
 
+*/
+
 /* ====== .playground ====== */
 /* ====== Eventually remove this shit ====== */
 
+/*
 .playground {
 	grid-column: 1 / 5;
 	grid-row: 4;
@@ -440,6 +452,7 @@ ul.technologies li.nodejs a {
   border: 0.5px solid $dk-bg-color;
 	margin: 5px;
 }
+*/
 
 /* ====== Other browser resets from normalize.css ====== */
 

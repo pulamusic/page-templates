@@ -1,21 +1,5 @@
 /*
 > Jim Carroll |
-> 10/21/2020 |
-> [GitHub Profile](https://github.com/pulamusic)
-
-
-*/
-/* ====== removing an element ====== */
-/* borrowed code from: https://stackoverflow.com/questions/17762354/remove-element-for-certain-screen-sizes/17762393 */
-/*
-@media only screen and (max-width: 767px) and (min-width: 480px)
-{
-    .icon-12{ display:none; } // 12 px
-    .icon-9{ display:inline-block; }  // 9px
-}
-*/
-/*
-> Jim Carroll |
 > 10/20/2020 |
 > [GitHub Profile](https://github.com/pulamusic)
 
@@ -23,16 +7,19 @@
 10/21/2020: Figured out modular sass setup. Check out: https://css-tricks.com/introducing-sass-modules/
 
 /* ====== Importing modules (hopefully) ====== */
+
+@use 'mixins' as m;
+@use 'variables' as v;
+
 /* ====== Global styles modified by normalize.css ====== */
+
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 body {
-  padding: 5px;
+	padding: 5px;
   margin: 0;
   box-sizing: border-box;
 }
@@ -42,59 +29,61 @@ main {
 }
 
 p {
-  margin: 0 0 1em 0;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  font-size: 1em;
+	margin: 0 0 1em 0;
+	font-family: v.$text-font;
+	font-weight: v.$rg-font-weight;
+  font-size: v.$reg-font-size;
 }
 
 h1 {
   display: block;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 2em;
+	font-family: v.$header-font;
+	font-weight: v.$bd-font-weight;
+  font-size: v.$l-font-size;
   margin: 0.67em 0;
 }
 
 h2 {
   display: block;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 1.4em;
+	font-family: v.$header-font;
+	font-weight: v.$bd-font-weight;
+  font-size: v.$md-font-size;
   margin: 0.83em 0;
 }
 
 h3 {
   display: block;
-  font-size: 1.2em;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
+  font-size: v.$md-reg-font-size;
+	font-family: v.$header-font;
+	font-weight: v.$md-font-weight;
   margin: 1em 0;
 }
 
 h4 {
   display: block;
-  font-size: 1em;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
+  font-size: v.$reg-font-size;
+	font-family: v.$header-font;
+	font-weight: v.$md-font-weight;
   margin: 1.33em 0;
 }
 
 h5 {
   display: block;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 0.8em;
+	font-family: v.$header-font;
+	font-weight: v.$md-font-weight;
+  font-size: v.$sm-font-size;
   margin: 1.67em 0;
 }
 
 h6 {
   display: block;
-  font-family: "Raleway", sans-serif;
-  font-weight: 300;
-  font-size: 0.8em;
+	font-family: v.$header-font;
+	font-weight: v.$rg-font-weight;
+  font-size: v.$sm-font-size;
   margin: 2.3em 0;
 }
+
+// ====== Now a bunch of code deleted from index.scss ======
 
 /*
 @include m.sm {
@@ -113,96 +102,97 @@ h6 {
   padding: 1em;
   margin: 0.8em 1em;
 } */
+
+
+
 /* ====== .post-container ====== */
+
 .post-container {
-  width: auto;
-  border: 1px solid rgba(219, 212, 218, 0.3);
-  border-radius: 0.5em;
-  box-shadow: 3px 4px 6px rgba(219, 212, 218, 0.1);
-  padding: 5px;
-  margin: 5px 10px;
-  display: block;
-}
-.post-container > div {
-  border: 1px solid rgba(219, 212, 218, 0.5);
-  border-radius: 0.3em;
-  box-shadow: 3px 4px 6px rgba(219, 212, 218, 0.3);
+	width: auto;
+	border: 1px solid v.$md-bg-color;
+	border-radius: .5em;
+	box-shadow: 3px 4px 6px v.$lt-bg-color;
+	padding: 5px;
+	margin: 5px 10px;
+	display: block;
+
+  > div {
+
+		border: 1px solid v.$dk-bg-color;
+		border-radius: .3em;
+		box-shadow: 3px 4px 6px v.$md-bg-color;
+	}
 }
 
 /* ====== .header-window ====== */
+
 .header-window {
-  background-color: #f2eff1;
-  display: block;
+	background-color: v.$new-bg-color;
+	display: block;
   padding: 0.8em;
-}
-.header-window header {
-  padding: 20px;
-  background-color: rgba(219, 212, 218, 0.3);
-  border-left: 1px solid rgba(30, 30, 30, 0.3);
-  display: inline-block;
-  margin: auto;
-}
-.header-window header h1 {
-  font-size: 2.2em;
-  margin: 0.3em 0;
-  font-weight: 600;
-}
-.header-window header h2 {
-  font-size: 1.4em;
-  font-weight: 200;
-  font-size: 1.4em;
-  margin-left: 0.5em;
-}
-.header-window header p {
-  font-size: 0.8em;
-  font-weight: 300;
-  margin-left: 0.9em;
+	header {
+		padding: 20px;
+    background-color: v.$md-bg-color;
+		border-left: 1px solid v.$lt-line-color;
+    display: inline-block;
+    margin: auto;
+		h1 {
+			font-size: v.$xl-font-size;
+			margin: 0.3em 0;
+			font-weight: v.$bd-font-weight;
+		}
+		h2 {
+			font-size: v.$md-font-size;
+			font-weight: v.$lt-font-weight;
+			font-size: v.$md-font-size;
+      margin-left: 0.5em;
+		}
+		p {
+			font-size: v.$sm-font-size;
+      font-weight: v.$rg-font-weight;
+      margin-left: 0.9em;
+		}
+	}
 }
 
 .header-window-logo {
-  padding: 1.5em;
-  display: block;
+	padding: 1.5em;
+	display: block;
   float: left;
-  min-width: 60px;
-  min-height: 60px;
+	min-width: 60px;
+	min-height: 60px;
   max-width: 300px;
-  height: auto;
-  width: auto;
-  background-color: rgba(219, 212, 218, 0.1);
+	height: auto;
+	width: auto;
+  background-color: v.$lt-bg-color;
   text-align: center;
-}
-@media (min-width: 576px) {
-  .header-window-logo {
+
+  @include m.sm {
     padding: 0.2em;
     margin: 0.1em 0.3em;
     display: block;
     visibility: hidden;
   }
-}
-@media (min-width: 768px) {
-  .header-window-logo {
+  @include m.md {
     padding: 0.3em;
     margin: 0.3em 0.5em;
     display: block;
     visibility: hidden;
   }
-}
-@media (min-width: 992px) {
-  .header-window-logo {
+  @include m.lg {
     padding: 0.6em;
     margin: 0.5em 0.7em;
     display: grid;
     visibility: visible;
   }
-}
-@media (min-width: 1200px) {
-  .header-window-logo {
+  @include m.xl {
     padding: 1em;
     margin: 0.8em 1em;
     display: grid;
-  }
-  .header-window-logo .header-window-logo {
-    visibility: visible;
+
+    .header-window-logo {
+      visibility: visible;
+    }
   }
 }
 
@@ -211,85 +201,90 @@ h6 {
   min-height: 100px;
   display: block;
   padding: 5px;
-  border: 2px solid rgba(219, 212, 218, 0.5);
-  background-color: rgba(219, 212, 218, 0.3);
+  border: 2px solid v.$dk-bg-color;
+  background-color: v.$md-bg-color;
   text-align: center;
-}
-.logo h1 {
-  font-size: 3em;
+  h1 {
+    font-size: v.$gigantic-font-size;
+  }
 }
 
 /* ====== .content-window ====== */
+
 .content-window {
-  background-color: rgba(219, 212, 218, 0.1);
+  background-color: v.$lt-bg-color;
   padding: 2em;
-}
-.content-window header h2 {
-  font-weight: 500;
-  font-family: "Raleway", sans-serif;
-  font-size: 2em;
-  margin: 1em 0 0.4em 0;
-}
-.content-window header h3 {
-  font-size: 1em;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  margin: 1em 0 1em 1em;
-}
-.content-window header h4 {
-  font-size: 0.8em;
-  font-family: "Raleway", sans-serif;
-  font-weight: 200;
-  margin: 0.6em 0 0.6em 1.5em;
-}
-.content-window header hr {
-  text-align: left;
-  margin: 0 75% 0.6em 1em;
+  header {
+    h2 {
+      font-weight: v.$md-font-weight;
+      font-family: v.$header-font;
+      font-size: v.$l-font-size;
+      margin: 1em 0 0.4em 0;
+    }
+    h3 {
+      font-size: v.$reg-font-size;
+    	font-family: v.$header-font;
+    	font-weight: v.$md-font-weight;
+      margin: 1em 0 1em 1em;
+    }
+    h4 {
+      font-size: v.$sm-font-size;
+    	font-family: v.$header-font;
+    	font-weight: v.$lt-font-weight;
+      margin: 0.6em 0 0.6em 1.5em;
+    }
+    hr {
+      text-align: left;
+      margin: 0 75% 0.6em 1em;
+    }
+  }
 }
 
 /* ====== .footer-window ====== */
+
 .footer-window {
-  background-color: rgba(219, 212, 218, 0.3);
+  background-color: v.$md-bg-color;
   padding: 0.6em;
-}
-.footer-window p {
-  text-align: center;
-  font-size: 0.8em;
-  font-weight: 200;
-  margin: auto;
-  padding: 1em;
+	p {
+		text-align: center;
+    font-size: v.$sm-font-size;
+    font-weight: v.$lt-font-weight;
+		margin: auto;
+    padding: 1em;
+	}
 }
 
 /* ====== Other browser resets from normalize.css ====== */
+
 /* Grouping content */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
+
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
+
 a {
   background-color: transparent;
   text-decoration: none;
@@ -299,18 +294,17 @@ a {
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
+
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
+
 b,
 strong {
   font-weight: bolder;
@@ -320,18 +314,18 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
+
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
  * Add the correct font size in all browsers.
  */
+
 small {
   font-size: 80%;
 }
@@ -340,6 +334,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
+
 sub,
 sup {
   font-size: 75%;
@@ -357,40 +352,40 @@ sup {
 }
 
 /* Embedded content */
+
 /**
  * Remove the border on images inside links in IE 10.
  */
+
 img {
   border-style: none;
 }
 
 /* Forms */
+
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
+
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
+
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -398,29 +393,31 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
+
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
+
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
+
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -428,16 +425,18 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
+
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 /**
  * Correct the padding in Firefox.
  */
+
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
@@ -448,24 +447,20 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
+
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
+
 progress {
   vertical-align: baseline;
 }
@@ -473,6 +468,7 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
+
 textarea {
   overflow: auto;
 }
@@ -481,19 +477,19 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -501,17 +497,17 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -519,17 +515,18 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
+
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
+
 details {
   display: block;
 }
@@ -537,14 +534,17 @@ details {
 /*
  * Add the correct display in all browsers.
  */
+
 summary {
   display: list-item;
 }
 
 /* Misc */
+
 /**
  * Add the correct display in IE 10+.
  */
+
 template {
   display: none;
 }
@@ -552,8 +552,7 @@ template {
 /**
  * Add the correct display in IE 10.
  */
+
 [hidden] {
   display: none;
 }
-
-/*# sourceMappingURL=styles.css.map */
