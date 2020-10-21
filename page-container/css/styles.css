@@ -6,6 +6,8 @@
 /* ====== Variables ====== */
 /*
     I can't seem to get these variables to work if I extract them to a separate module.
+
+    Making a change to see what happens.
 */
 /* ====== Mixins ====== */
 /* ====== Global styles modified by normalize.css ====== */
@@ -79,34 +81,58 @@ h6 {
   box-shadow: 3px 4px 6px rgba(219, 212, 218, 0.1);
   /*padding: 5px;
   margin: 5px 10px;*/
-  /*display: grid;*/
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 5px; }
   @media (min-width: 576px) {
     .page-container {
       padding: 0.2em;
-      margin: 0.1em 0.3em;
-      display: block; } }
+      margin: 0.1em 0.3em; } }
   @media (min-width: 768px) {
     .page-container {
       padding: 0.3em;
-      margin: 0.3em 0.5em;
-      display: block; } }
+      margin: 0.3em 0.5em; } }
   @media (min-width: 992px) {
     .page-container {
       padding: 0.6em;
-      margin: 0.5em 0.7em;
-      display: grid; } }
+      margin: 0.5em 0.7em; } }
   @media (min-width: 1200px) {
     .page-container {
       padding: 1em;
-      margin: 0.8em 1em;
-      display: grid; } }
+      margin: 0.8em 1em; } }
   .page-container > div {
-    /*padding: 0.8em;*/
+    padding: 0.8em;
     border: 1px solid rgba(219, 212, 218, 0.5);
     border-radius: .3em;
     box-shadow: 3px 4px 6px rgba(219, 212, 218, 0.3); }
+    @media (min-width: 576px) {
+      .page-container > div {
+        padding: 0.2em;
+        margin: 0.1em 0.3em;
+        display: block; }
+        .page-container > div .header-window-logo {
+          visibility: hidden; } }
+    @media (min-width: 768px) {
+      .page-container > div {
+        padding: 0.3em;
+        margin: 0.3em 0.5em;
+        display: block; }
+        .page-container > div .header-window-logo {
+          visibility: hidden; } }
+    @media (min-width: 992px) {
+      .page-container > div {
+        padding: 0.6em;
+        margin: 0.5em 0.7em;
+        display: grid; }
+        .page-container > div .header-window-logo {
+          visibility: visible; } }
+    @media (min-width: 1200px) {
+      .page-container > div {
+        padding: 1em;
+        margin: 0.8em 1em;
+        display: grid; }
+        .page-container > div .header-window-logo {
+          visibility: visible; } }
 
 /* ====== .header-window ====== */
 .header-window {
@@ -217,7 +243,63 @@ h6 {
     margin: auto;
     padding: 10px; }
 
+/* ====== Technologies div ====== */
+.technologies-list {
+  padding: 5px;
+  background-color: rgba(219, 212, 218, 0.1);
+  /* rgba(219, 212, 218, 0.1) */ }
+
+.unstyled {
+  list-style: none outside none;
+  padding-left: 0; }
+
+.unstyled li {
+  list-style: none outside none; }
+
+ul.technologies a {
+  background: url(/themes/ab2019/images/sprite/technologies--blue-dark.svg) no-repeat 50% 0;
+  display: block;
+  margin: 40px auto;
+  overflow: hidden;
+  text-indent: -9999px; }
+
+ul.technologies li.symfony a {
+  background-position: 50% 0;
+  height: 78px;
+  width: 74px; }
+
+ul.technologies li.drupal a {
+  background-position: 50% -90px;
+  height: 36px;
+  width: 132px; }
+
+ul.technologies li.wordpress a {
+  background-position: 50% -140px;
+  height: 56px;
+  width: 130px; }
+
+ul.technologies li.javascript a {
+  background-position: 50% -210px;
+  height: 36px;
+  width: 50px; }
+
+ul.technologies li.nodejs a {
+  background-position: 50% -260px;
+  height: 40px;
+  width: 146px; }
+
+@media (min-width: 768px) {
+  h4.h1-font-size {
+    margin-top: 130px;
+    text-align: left; }
+
+  ul.technologies {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; } }
 /* ====== .playground ====== */
+/* ====== Eventually remove this shit ====== */
 .playground {
   grid-column: 1 / 5;
   grid-row: 4;
@@ -233,7 +315,7 @@ h6 {
   border: 0.5px solid rgba(219, 212, 218, 0.5);
   margin: 5px; }
 
-/* ====== browser resets from normalize.css ====== */
+/* ====== Other browser resets from normalize.css ====== */
 /* Grouping content */
 /**
  * 1. Add the correct box sizing in Firefox.

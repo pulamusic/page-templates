@@ -19,3 +19,4 @@ Fix the fucking logo.
 ---
 
 10/20/2020: In the middle of working on mixins.
+10/21/2020: Since adding the mixins, the layout is all fucked. Fuck.
