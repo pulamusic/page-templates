@@ -1,0 +1,16 @@
+{
+  "name": "page-container",
+  "version": "1.0.0",
+  "description": "A template page setup with header, footer, sidebar, and content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "comp": "sass --watch scss/styles.scss:css/styles.css"
+  },
+  "author": "Jim Carroll",
+  "license": "MIT",
+  "dependencies": {
+    "compile-sass": "^1.1.1",
+    "normalize.css": "^8.0.1"
+  }
+}
