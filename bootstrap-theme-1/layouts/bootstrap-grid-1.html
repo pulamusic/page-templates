@@ -3,6 +3,8 @@
 > 10/21/2020 |
 > [GitHub Profile](https://github.com/pulamusic)
 
+ 10/21/2020 | 20:21 EDT (GMT-04:00) Copied and edited this from index.html
+
 -->
 
 <!doctype html>
@@ -11,42 +13,49 @@
     <!-- Standard meta declarations -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="bootstrap-theme-1">
+    <meta name="description" content="bootstrap-grid-1">
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
     <meta name="author" content="James Carroll">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- local stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <!-- Title and such -->
-    <title>bootstrap-theme-1</title>
+    <title>bootstrap-grid-1</title>
   </head>
   <body>
-
     <!-- bootstrap doc https://getbootstrap.com/docs/4.0/layout/overview/#containers -->
     <div class="container">
-      <header>
-        <h1>The main page div</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae assumenda architecto provident, voluptas ipsam fugit dignissimos, error ad aliquid rerum distinctio quis perspiciatis itaque repellat veniam commodi. Dicta, dolorem, voluptate!</p>
-      </header>
-
-      <hr>
-
-      <div>
-        <h3>Something here</h3>
+      <div class="row">
+        <div class="jumbotron col-lg">
+          <h1>One big honking div</h1>
+        </div>
       </div>
 
-      <div>
-        <h3>And something here</h3>
+      <!-- a 3 row grid -->
+      <div class="row">
+        <div class="col-sm">
+          <p>One of three columns</p>
+        </div>
+        <div class="col-sm">
+          <p>One of three columns</p>
+        </div>
+        <div class="col-sm">
+          <p>One of three columns</p>
+        </div>
       </div>
+    </div>
 
-      <hr>
-
-      <div class="container-fluid">
-        <!-- fluid container stretches the full width of the page -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo sequi amet et, omnis minima fugiat! Eius repudiandae, autem quos officia, illum at laborum harum quas! Reiciendis ex repellendus minima sapiente.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="w-100"></div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
       </div>
-
     </div>
 
     <!-- Optional JavaScript -->
